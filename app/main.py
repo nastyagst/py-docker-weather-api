@@ -8,6 +8,7 @@ API_URL = "http://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:
+    api_key = os.getenv("API_KEY")
 
     if not api_key:
         print("Error: API_KEY environment variable is not set.")

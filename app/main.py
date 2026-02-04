@@ -3,15 +3,16 @@ import requests
 import sys
 
 
-def get_weather():
+CITY = "Paris"
+API_URL = "http://api.weatherapi.com/v1/current.json"
+
+def get_weather() -> None:
     api_key = os.getenv("API_KEY")
-    city = "Paris"
 
     if not api_key:
         print("Error: API_KEY environment variable is not set.")
         sys.exit(1)
 
-    url = "http://api.weatherapi.com/v1/current.json"
     params = {"key": api_key, "q": city}
 
     try:
